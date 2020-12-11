@@ -17,7 +17,7 @@ import nltk
 t2 = time.time()
 print('\t[ IMPORTED IN {0:.3f} SECS ]'.format(t2-t1))
 
-file = open( 'NEW_CORPUS.txt' , 'r' )
+file = open( 'SAMPLE_CORPUS.txt' , 'r' )
 print(' IMPORTING SAMPLE CORPUS...')
 t1 = time.time()
 CORPUS = file.read()
@@ -49,7 +49,7 @@ V = len( VOCAB )
 
 print(' LOADING CONFUSION MATRICES...')
 t1 = time.time()
-file = open( "CONFUSION_MATRIX_DEL.txt" , "r" )
+file = open( "CONFUSION_MATRICES/CONFUSION_MATRIX_DEL.txt" , "r" )
 raw = list()
 for x in file:
     x = int(x[:-1])
@@ -57,7 +57,7 @@ for x in file:
 file.close()
 CMD = np.array(raw).reshape(27,26)
 
-file = open( "CONFUSION_MATRIX_INS.txt" , "r" )
+file = open( "CONFUSION_MATRICES/CONFUSION_MATRIX_INS.txt" , "r" )
 raw = list()
 for x in file:
     x = int(x[:-1])
@@ -65,7 +65,7 @@ for x in file:
 file.close()
 CMI = np.array(raw).reshape(27,26)
 
-file = open( "CONFUSION_MATRIX_SUB.txt" , "r" )
+file = open( "CONFUSION_MATRICES/CONFUSION_MATRIX_SUB.txt" , "r" )
 raw = list()
 for x in file:
     x = int(x[:-1])
@@ -73,7 +73,7 @@ for x in file:
 file.close()
 CMS = np.array(raw).reshape(27,26)
 
-file = open( "CONFUSION_MATRIX_TRAN.txt" , "r" )
+file = open( "CONFUSION_MATRICES/CONFUSION_MATRIX_TRAN.txt" , "r" )
 raw = list()
 for x in file:
     x = int(x[:-1])
