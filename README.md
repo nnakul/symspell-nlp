@@ -5,7 +5,8 @@ The project realises a feauture of correcting invalid words in English language 
 Any spell checker must have some data about the words in the target language, either in general usage or with specialized knowledge (like medical vocabulary). This can come from:<ul>
 <li>A dictionary of all known words.
 <li>A text corpus which includes typical text, known to be correctly spelled.
-<li>A list of frequently misspelled words, mapping errors to corrections.<\ul>
+<li>A list of frequently misspelled words, mapping errors to corrections.
+</ul>
 In this project, only the first two sources of data are used. List of frequently misspelled words is not maintained to reduce any additional look-up instructions.
 However such a list, possibly including multi-word phrases, can simply be consulted to see if any of the input words or phrases are present in the list. This functionality can be added depending on the requirements and the nature of input queries.<br>
 
