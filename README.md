@@ -18,9 +18,15 @@ Because a dictionary of known words is very large, calculating the edit distance
 
 *A further innovation known as SymSpell ("sym" as in "symmetry") can be adopted to speed up the input-time calculation by utilizing the fact that only permutations involving deletions need to be generated for input words if the same deletion permutations are pre-calculated on the dictionary. Therefore, the offline task of producing a hash-table that maps a word (correct or incorrect) to a list of all the words in the dictionary that can generate that word upon deletion of any one or two letters and pickling that data structure in a binary file to be used in the main program forms the basis of the application.*<br>
 
+## NOISY CHANNEL MODEL AND CONFUSION MATRICES
+
+## SMOOTHING
+
 ## MITIGATING SOME CHALLENGES
 The vocabulary size is more than 370,000 and hence the total number of distinct words that are produced upon "trimming" each and every word in the vocabulary is huge. It was observed that loading such a heavy file took around 5 minutes at the time of execution. Therefore, to balance the load, the hashtable was distributed among 15 sub-structures that are loaded and then concatenated at the time of execution, hence reducing the net loading time by almost 3 minutes.
 
 The algorithms described so far do not deal well with correct words that are not in the dictionary. Common sources of unknown words in English are compound words and inflections, such as *-s* and *-ing*. These can be accommodated algorithmically, especially if the dictionary contains the part of speech. For simplicity, a dictionary containing not only the morphemes (smallest meaningful units in a language) but also their derivations, inflections and concatenations with other continuous affixes has been used.
 
 Spelling suggestions can also be made more accurate by taking into account more than one word at a time. Multi-word sequences are known as n-grams (where n is the number of words in the sequence). A very large database of n-grams up to 5 words in length is available from Google for this and other purposes. In this project, the best replacement for an incorrect word in the query is chosen on the basis of the words that comes before and after the incorrect word. Since the query is checked for multiple spelling mistakes and correction is done in a sequential order, the word before any incorrect word in the query will always be a valid word in the target language but the word coming after that might not be. In this case, only the preceding word is considered in the n-gram sequence.
+
+real word errors
