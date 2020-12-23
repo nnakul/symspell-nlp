@@ -2,12 +2,12 @@
 The project realises a feauture of correcting invalid words in English language using Symmetric Delete Spelling Correction Algorithm. Spelling suggestion is a feature of many computer software applications used to suggest plausible replacements for words that are likely to have been misspelled. This feauture is commonly included in Internet search engines, word processors and spell checkers. 
 
 # SYMMETRIC DELETE SPELLING CORRECTION ALGORITHM
-Any spell checker must have some data about the words in the target language, either in general usage or with specialized knowledge (like medical vocabulary). This can come from:
-  o  A dictionary of all known words.
-  o  A text corpus which includes typical text, known to be correctly spelled.
-  o  A list of frequently misspelled words, mapping errors to corrections.
+Any spell checker must have some data about the words in the target language, either in general usage or with specialized knowledge (like medical vocabulary). This can come from:<br>
+&nbsp;&nbsp;o&nbsp;&nbsp;A dictionary of all known words.<br>
+&nbsp;&nbsp;o&nbsp;&nbsp;A text corpus which includes typical text, known to be correctly spelled.<br>
+&nbsp;&nbsp;o&nbsp;&nbsp;A list of frequently misspelled words, mapping errors to corrections.<br>
 In this project, only the first two sources of data are used. List of frequently misspelled words is not maintained to reduce any additional look-up instructions.
-However such a list, possibly including multi-word phrases, can simply be consulted to see if any of the input words or phrases are present in the list. This functionality can be added depending on the requirements and the nature of input queries.
+However such a list, possibly including multi-word phrases, can simply be consulted to see if any of the input words or phrases are present in the list. This functionality can be added depending on the requirements and the nature of input queries.<br><br>
 
 To make use of a dictionary without a pre-existing mapping from misspellings to corrections, the typical technique is to calculate the edit distance between an input word and any given word in the dictionary. The Levenshtein distance metric considers an "edit" to be the insertion, deletion, or substitution (with another letter) of one letter. The Damerau–Levenshtein distance adds transpositions (the swapping of neighboring letters). Dictionary words that are an edit distance of 1 away from the input word are considered highly likely as corrections, edit distance 2 less likely, and edit distance 3 sometimes included in suggestions and sometimes ignored.
 
