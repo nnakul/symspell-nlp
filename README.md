@@ -2,10 +2,10 @@
 The project realises a feauture of correcting invalid words in English language using Symmetric Delete Spelling Correction Algorithm. Spelling suggestion is a feature of many computer software applications used to suggest plausible replacements for words that are likely to have been misspelled. This feauture is commonly included in Internet search engines, word processors and spell checkers. 
 
 # SYMMETRIC DELETE SPELLING CORRECTION ALGORITHM
-Any spell checker must have some data about the words in the target language, either in general usage or with specialized knowledge (like medical vocabulary). This can come from:<br><ul>
-<li>&nbsp;&nbsp;o&nbsp;&nbsp;A dictionary of all known words.<br><\li>
-<li>&nbsp;&nbsp;o&nbsp;&nbsp;A text corpus which includes typical text, known to be correctly spelled.<br><\li>
-<li>&nbsp;&nbsp;o&nbsp;&nbsp;A list of frequently misspelled words, mapping errors to corrections.<br><\li><\ul>
+Any spell checker must have some data about the words in the target language, either in general usage or with specialized knowledge (like medical vocabulary). This can come from:<ul>
+<li>A dictionary of all known words.
+<li>A text corpus which includes typical text, known to be correctly spelled.
+<li>A list of frequently misspelled words, mapping errors to corrections.<\ul>
 In this project, only the first two sources of data are used. List of frequently misspelled words is not maintained to reduce any additional look-up instructions.
 However such a list, possibly including multi-word phrases, can simply be consulted to see if any of the input words or phrases are present in the list. This functionality can be added depending on the requirements and the nature of input queries.<br>
 
