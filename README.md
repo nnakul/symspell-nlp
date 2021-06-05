@@ -3,6 +3,9 @@ The project realises a feauture of correcting invalid words in English language 
 <img src="EXAMPLE_O1.png">
 <img src="EXAMPLE_O2.png">
 **Note that the query is checked only for non-word errors. In order to consider real-word errors as well, each token in the query has to be treated as a possible incorrect word.**
+In addition to showing the corrected sentence(s), their is an option to also print the analysis report.
+
+<img src="https://user-images.githubusercontent.com/66432513/120901704-1fee4f80-c65a-11eb-98fe-45abed51b660.png" height = '990' width = '900'>
 
 ## SYMMETRIC DELETE SPELLING CORRECTION ALGORITHM
 Any spell checker must have some data about the words in the target language, either in general usage or with specialized knowledge (like medical vocabulary). This can come from:<ul>
