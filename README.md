@@ -21,14 +21,13 @@ Because a dictionary of known words is very large, calculating the edit distance
 
 ## NOISY CHANNEL MODEL AND CONFUSION MATRICES
 The noisy channel model is a framework used in spell checkers, question answering, speech recognition, and machine translation. In this model, the goal is to find the intended word given a word where the letters have been scrambled or contaminated in some manner. A word that was intended to be spelled correctly can be misspelled due to various reasons, like a typing error on keyboard or due to mishearing certain words dictated by a third person. Intuitively, the best replacement for an incorrect word in a query is the word that has the highest probability of getting converted into the incorrect word when passed through the noisy channel. A noisy channel is studied by building a probabilistic model of the errors or noise that can be introduced in a correctly spelled text when passed through the channel. For example, what is the probability that an 'a' in a word is wrongly replaced by an 'e' or an additional 'a' is wrongly appended at the end of a word. Mathematically, the probability that a correct word *w* is converted into an incorrected word *iw* can be calculated based on the probabilities of commiting each of the fundamental errors (insertion, substitution, deletion and transposition) while changing *w* to *iw (HINT: trace the table constructed when the dynamic programming was used to calculate the edit distance between w and iw)*<br>
-The confusion matrices contain the count of the number of times a fundamental error was introduced by the noisy channel.<ul>
-<li>DELETION CONFUSION MATRIX (D) - D[x][y] is equal to the number of times the letter y was wrongly deleted after the letter x
-<li>INSERTION CONFUSION MATRIX (I) - I[x][y] is equal to the number of times the letter y was wrongly inserted after the letter x
-<li>SUBSTITUTION CONFUSION MATRIX (S) - S[x][y] is equal to the number of times the letter y was wrongly substituted by the letter x
-<li>TRANSPOSITION CONFUSION MATRIX (T) - T[x][y] is equal to the number of times the fragment xy was wrongly written as yx
-</ul>
+The confusion matrices contain the count of the number of times a fundamental error was introduced by the noisy channel.
+* *DELETION CONFUSION MATRIX (D)* - *D[x][y]* is equal to the number of times the letter y was wrongly deleted after the letter x
+* *INSERTION CONFUSION MATRIX (I)* - *I[x][y]* is equal to the number of times the letter y was wrongly inserted after the letter x
+* *SUBSTITUTION CONFUSION MATRIX (S)* - *S[x][y]* is equal to the number of times the letter y was wrongly substituted by the letter x
+* *TRANSPOSITION CONFUSION MATRIX (T)* - *T[x][y]* is equal to the number of times the fragment xy was wrongly written as yx
 
-## MITIGATING SOME PROBLEMS
+## MITIGATION
 The vocabulary size is more than 370,000 and hence the total number of distinct words that are produced upon "trimming" each and every word in the vocabulary is huge. It was observed that loading such a heavy file took around 5 minutes at the time of execution. Therefore, to balance the load, the hashtable was distributed among 15 sub-structures that are loaded and then concatenated at the time of execution, hence reducing the net loading time by almost 3 minutes.
 
 The algorithms described so far do not deal well with correct words that are not in the dictionary. Common sources of unknown words in English are compound words and inflections, such as *-s* and *-ing*. These can be accommodated algorithmically, especially if the dictionary contains the part of speech. For simplicity, a dictionary containing not only the morphemes (smallest meaningful units in a language) but also their derivations, inflections and concatenations with other continuous affixes has been used.
